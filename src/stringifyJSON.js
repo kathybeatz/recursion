@@ -37,5 +37,11 @@ var stringifyJSON = function(obj) {
   	}
   }
 
+  //Spec: string
+  //check if the object is a string
+  if(typeof obj === 'string'){
+  	//if it is, stringify the object
+  	return '"' + obj + '"';
+  }
 
 };
