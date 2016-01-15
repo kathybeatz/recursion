@@ -15,7 +15,12 @@ var stringifyJSON = function(obj) {
   	return obj.toString();
   }
 
-
+  //Spec: null
+  //check if the object is null
+  if(obj === null){
+  	//if it is, stringify it
+  	return 'null';
+  }
 
 
 };
