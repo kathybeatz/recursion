@@ -22,5 +22,20 @@ var stringifyJSON = function(obj) {
   	return 'null';
   }
 
+  //Spec: true / false
+  //check if the object is a boolean
+  if(typeof obj === 'boolean'){
+  	//if it is false
+  	if(!obj){
+  		//stringify false
+  		return 'false';
+  	//if it is true
+  	}else{
+  		//stringify true
+  		return 'true';
+
+  	}
+  }
+
 
 };
