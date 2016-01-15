@@ -44,4 +44,11 @@ var stringifyJSON = function(obj) {
   	return '"' + obj + '"';
   }
 
+  //Spec: array
+  //check if the object is an array 
+  if(Array.isArray(obj)){
+  	//if it is then stringify the array
+  	return '[]';
+  }
+
 };
