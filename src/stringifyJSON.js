@@ -44,11 +44,18 @@ var stringifyJSON = function(obj) {
   	return '"' + obj + '"';
   }
 
-  //Spec: array
+  //Spec: array, array with element inside, nested arrays
   //check if the object is an array 
-  if(Array.isArray(obj)){
-  	//if it is then stringify the array
-  	return '[]';
-  }
+    if(Array.isArray(obj)){
+      //create an empty array as storage for the newly stringified elements from the original array
+      var results = [];
+      //loop through the array
+      for(var i = 0; i < obj.length; i++){
+      	//stringify each of the elements inside the array and push them into the results container
+        results.push( stringifyJSON(obj[i]) );
+      }
+     //return the newly stringified array, including newly stringified elements contained inside
+     return '['+results.join(',')+']';
+ }
 
 };
