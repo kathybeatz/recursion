@@ -26,7 +26,7 @@ var getElementsByClassName = function(className, node){
 
   //loop through the child nodes
   for (var i = 0; i < node.children.length; i++) {
-	//for each child element, invoke getElementsByClassName
+	//for each child element, invoke getElementsByClassName(will be invoked with a new node(child node) - recursion)
 	var childNodeResults = getElementsByClassName(className, node.children[i]);
 	//combine the results from parent and child nodes
 	results = results.concat(childNodeResults); 
